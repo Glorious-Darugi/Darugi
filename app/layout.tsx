@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FloatingCta from "@/components/FloatingCta";
 import Analytics from "@/components/Analytics";
+import AnchorScroll from "@/components/AnchorScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -52,6 +53,7 @@ export default function RootLayout({
         {children}
         <SiteFooter />
         <FloatingCta />
+        <AnchorScroll />
         <Analytics />
       </body>
     </html>
