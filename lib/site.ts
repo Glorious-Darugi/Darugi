@@ -66,6 +66,6 @@ export const navItems = [
   { href: "/#services", label: "서비스" },
   { href: "/#why", label: "차별점" },
   { href: "/#mvp", label: "자동화 MVP" },
-  { href: "/#process", label: "진행 방식" },
+  { href: "/blog", label: "블로그" },
   { href: "/#faq", label: "FAQ" },
 ] as const;

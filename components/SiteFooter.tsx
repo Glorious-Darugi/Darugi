@@ -10,9 +10,9 @@ export default function SiteFooter() {
           <p>{site.tagline}</p>
         </div>
         <nav className="site-footer__nav" aria-label="푸터 메뉴">
-          <a href="#services">서비스</a>
-          <a href="#mvp">자동화 MVP</a>
-          <a href="#faq">FAQ</a>
+          <a href="/#services">서비스</a>
+          <a href="/blog">블로그</a>
+          <a href="/contact">상담 신청</a>
           <a href={site.kakaoUrl} target="_blank" rel="noopener">
             카카오톡 상담
           </a>

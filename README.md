@@ -101,3 +101,58 @@ public/
 - 후기·신뢰 로고 영역
 - 한국어 + 영어 다국어
 - 자동화 MVP 데모 페이지 연결
+
+---
+
+## 7. 추가 기능 설정 (분석 · 상담폼 · 블로그)
+
+모두 `lib/site.ts` 한 파일에서 켜고 끕니다. 비워두면 자동으로 비활성화됩니다.
+
+### 방문자 분석
+```ts
+analytics: {
+  ga4: "G-XXXXXXXXXX",   // Google Analytics 4 측정 ID
+  naver: "",              // 네이버 애널리틱스 ID
+}
+```
+- 값을 넣으면 자동 로드됩니다.
+- 카카오톡 버튼 클릭은 GA4에 `kakao_click` 이벤트로 기록됩니다.
+
+### 검색엔진 사이트 인증
+```ts
+verification: {
+  google: "구글-서치콘솔-코드",
+  naver: "네이버-서치어드바이저-코드",
+}
+```
+
+### 상담 신청 폼 (`/contact`)
+두 가지 방법 중 하나만 설정하면 폼이 동작합니다.
+```ts
+formEndpoint: "https://formspree.io/f/xxxxxxx",  // (권장) Formspree 등
+email: "받을이메일@example.com",                  // 또는 메일앱으로 전송(mailto)
+```
+- 둘 다 비우면, 폼 제출 시 "카카오톡으로 문의" 안내가 뜹니다.
+- ⚠️ `email`은 공개되니 스팸이 걱정되면 Formspree 사용을 권장합니다.
+
+### 블로그 글 추가 (`/blog`)
+`lib/posts.ts`의 `posts` 배열에 객체를 하나 추가하면 글이 생깁니다.
+```ts
+{
+  slug: "url-주소",        // /blog/url-주소
+  title: "제목",
+  description: "검색 요약문",
+  date: "2026-06-20",
+  readingMin: 5,
+  tags: ["네이버 SEO"],
+  blocks: [
+    { type: "h2", text: "소제목" },
+    { type: "p", text: "문단 내용" },
+    { type: "ul", items: ["항목1", "항목2"] },
+  ],
+}
+```
+- 글마다 Article 구조화 데이터·메타태그·사이트맵이 자동 생성됩니다.
+
+## 📄 추가된 페이지
+- `/` 홈 · `/contact` 상담 신청 · `/blog` 블로그 목록 · `/blog/[slug]` 글

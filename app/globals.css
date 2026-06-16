@@ -511,3 +511,120 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (min-width: 921px) {
   .nav.is-open { transform: none; }
 }
+
+/* ============================================================
+   상담 신청 폼 (/contact)
+============================================================ */
+.contact-hero, .blog-hero, .post { padding-top: clamp(48px, 7vw, 90px); }
+
+.form { display: flex; flex-direction: column; gap: 18px; margin-top: 28px; }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form__field { display: flex; flex-direction: column; gap: 8px; }
+.form__field > span { font-size: 14px; font-weight: 700; color: var(--ink); }
+.form input,
+.form select,
+.form textarea {
+  font-family: inherit; font-size: 16px; color: var(--ink);
+  background: #fff; border: 1.5px solid var(--line); border-radius: 12px;
+  padding: 13px 15px; transition: border-color .15s, box-shadow .15s;
+  width: 100%;
+}
+.form textarea { resize: vertical; }
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: none; border-color: var(--violet);
+  box-shadow: 0 0 0 4px var(--violet-50);
+}
+.form__submit { margin-top: 6px; }
+.form__hint { font-size: 13px; color: var(--muted); text-align: center; }
+.form__error {
+  font-size: 14px; color: #c0392b; background: #fdecea;
+  border-radius: 10px; padding: 12px 14px;
+}
+
+.form-result {
+  text-align: center; margin-top: 28px;
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: 40px 28px;
+}
+.form-result__icon {
+  width: 60px; height: 60px; margin: 0 auto 16px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 28px; font-weight: 900;
+  background: var(--violet-700); color: #fff;
+}
+.form-result h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+.form-result p { color: var(--muted); margin-bottom: 22px; }
+.form-result code {
+  background: #fff; border: 1px solid var(--line); border-radius: 6px;
+  padding: 1px 6px; font-size: 13px;
+}
+
+@media (max-width: 560px) {
+  .form__row { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   블로그 (/blog, /blog/[slug])
+============================================================ */
+.chip {
+  display: inline-block; font-size: 12px; font-weight: 700;
+  padding: 4px 11px; border-radius: var(--radius-pill);
+  background: var(--violet-50); color: var(--violet-700);
+}
+
+.blog-empty {
+  margin-top: 30px; padding: 40px; text-align: center;
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); color: var(--muted); font-weight: 600;
+}
+
+.blog-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 8px;
+}
+.blog-card {
+  display: block; background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: 28px;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: transparent; }
+.blog-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.blog-card h2 { font-size: 21px; font-weight: 800; margin-bottom: 10px; }
+.blog-card p { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+.blog-card__meta { font-size: 13px; color: var(--muted); display: flex; gap: 6px; }
+
+/* 글 본문 */
+.post__back {
+  display: inline-block; font-size: 14px; font-weight: 700;
+  color: var(--violet-700); margin-bottom: 24px;
+}
+.post__back:hover { text-decoration: underline; }
+.post__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.post__title { font-size: clamp(28px, 5vw, 42px); font-weight: 900; margin-bottom: 14px; }
+.post__meta { font-size: 14px; color: var(--muted); display: flex; gap: 6px; margin-bottom: 36px; }
+
+.post__body { font-size: 17px; line-height: 1.85; color: #2a2933; }
+.post__body h2 {
+  font-size: clamp(20px, 3vw, 26px); font-weight: 800; color: var(--ink);
+  margin: 40px 0 14px;
+}
+.post__body p { margin-bottom: 20px; }
+.post__body ul { margin: 0 0 22px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.post__body ul li { position: relative; padding-left: 26px; }
+.post__body ul li::before {
+  content: ""; position: absolute; left: 4px; top: 12px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--violet);
+}
+
+.post__cta {
+  margin-top: 48px; text-align: center;
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: 40px 28px;
+}
+.post__cta h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+.post__cta p { color: var(--muted); margin-bottom: 22px; }
+.post__cta-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+@media (max-width: 640px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}
