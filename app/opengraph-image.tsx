@@ -1,10 +1,16 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 // 카카오톡·SNS 공유 미리보기용 OG 이미지(PNG 자동 생성).
-// 한글 폰트 임베드 이슈를 피하려고 라틴 텍스트로 구성 — 모든 플랫폼에서 안정적으로 렌더됩니다.
-export const alt = "Darugi — Search & AI find you first";
+// 한글이 깨지지 않도록 Pretendard(서브셋) 폰트를 임베드합니다.
+export const alt = "다루기 — 검색과 AI가 당신을 먼저 찾게 만듭니다";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+const pretendard = readFileSync(
+  join(process.cwd(), "app/_fonts/pretendard-kr.otf")
+);
 
 export default function OgImage() {
   return new ImageResponse(
@@ -17,9 +23,9 @@ export default function OgImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           background: "#ffffff",
-          padding: "80px",
+          padding: "76px",
           position: "relative",
-          fontFamily: "sans-serif",
+          fontFamily: "Pretendard",
         }}
       >
         {/* 배경 장식 */}
@@ -72,8 +78,8 @@ export default function OgImage() {
               }}
             />
           </div>
-          <div style={{ fontSize: 42, fontWeight: 800, color: "#15141c" }}>
-            Darugi
+          <div style={{ fontSize: 44, fontWeight: 700, color: "#15141c" }}>
+            다루기
           </div>
         </div>
 
@@ -81,33 +87,33 @@ export default function OgImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: 86,
-              fontWeight: 800,
+              fontSize: 76,
+              fontWeight: 700,
               color: "#15141c",
-              lineHeight: 1.08,
+              lineHeight: 1.12,
               letterSpacing: "-2px",
             }}
           >
-            Search &amp; AI
+            검색과 AI가 당신을
           </div>
           <div
             style={{
-              fontSize: 86,
-              fontWeight: 800,
+              fontSize: 76,
+              fontWeight: 700,
               color: "#5a4ff0",
-              lineHeight: 1.08,
+              lineHeight: 1.12,
               letterSpacing: "-2px",
             }}
           >
-            find you first.
+            먼저 찾게 만듭니다
           </div>
           <div style={{ display: "flex", gap: 14, marginTop: 34 }}>
-            {["NAVER SEO", "GEO", "AEO", "AI MVP"].map((t) => (
+            {["네이버 SEO", "GEO", "AEO", "자동화 MVP"].map((t) => (
               <div
                 key={t}
                 style={{
                   display: "flex",
-                  fontSize: 26,
+                  fontSize: 27,
                   fontWeight: 700,
                   color: "#5a4ff0",
                   background: "#eef0ff",
@@ -122,6 +128,16 @@ export default function OgImage() {
         </div>
       </div>
     ),
-    size
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Pretendard",
+          data: pretendard,
+          weight: 700,
+          style: "normal",
+        },
+      ],
+    }
   );
 }
