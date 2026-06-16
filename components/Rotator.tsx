@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const WORDS = ["네이버", "ChatGPT", "제미나이", "구글 AI"];
+const WORDS = ["네이버", "ChatGPT", "Gemini", "구글 AI"];
 
 /** 히어로 헤드라인에서 채널명을 순환시키는 동적 텍스트 */
 export default function Rotator() {
