@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     title: "상담 신청 | " + site.name,
     description: "네이버 SEO부터 AI 검색 노출까지, 편하게 상담 신청하세요.",
     url: "/contact",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
   },
 };
 

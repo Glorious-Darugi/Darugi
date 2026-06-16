@@ -21,13 +21,11 @@ export const metadata: Metadata = {
     description:
       "네이버 SEO부터 ChatGPT·제미나이 AI 검색 노출(GEO·AEO)까지. 직접 만들고 직접 노출시키는 마케터.",
     url: "/",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: "검색과 AI가 당신을 먼저 찾게 만듭니다 | " + site.name,
     description: "네이버 SEO부터 ChatGPT·제미나이 AI 검색 노출(GEO·AEO)까지.",
-    images: ["/og-image.svg"],
   },
   verification: {
     google: site.verification.google || undefined,

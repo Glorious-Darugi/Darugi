@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     title: "블로그 | " + site.name,
     description: "네이버 SEO·GEO·AEO 실전 가이드.",
     url: "/blog",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
   },
 };
 

@@ -28,7 +28,6 @@ export async function generateMetadata({
       description: post.description,
       url: `/blog/${post.slug}`,
       publishedTime: post.date,
-      images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
     },
   };
 }

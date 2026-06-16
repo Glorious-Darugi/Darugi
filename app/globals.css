@@ -628,3 +628,16 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 640px) {
   .blog-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   404
+============================================================ */
+.notfound { text-align: center; padding-top: clamp(60px, 10vw, 120px); }
+.notfound__code {
+  font-size: clamp(72px, 16vw, 140px); font-weight: 900; line-height: 1;
+  background: linear-gradient(135deg, var(--violet), var(--violet-700));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 8px;
+}
+.notfound .section__lead { margin-inline: auto; }
+.notfound__btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
