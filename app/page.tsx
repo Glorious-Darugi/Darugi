@@ -2,6 +2,54 @@ import { Fragment } from "react";
 import { site } from "@/lib/site";
 import JsonLd from "@/components/JsonLd";
 import ScrollEffects from "@/components/ScrollEffects";
+import Rotator from "@/components/Rotator";
+import Icon from "@/components/Icon";
+
+const SERVICES = [
+  {
+    icon: "search",
+    title: "네이버 블로그 SEO 상위노출",
+    body: "키워드 경쟁도 설계부터 콘텐츠 구조까지, 검색 1페이지에 노출되는 블로그 마케팅을 만듭니다.",
+  },
+  {
+    icon: "ai",
+    title: "GEO · 생성형 AI 검색 최적화",
+    body: "ChatGPT·제미나이가 답변할 때 당신의 브랜드를 추천·인용하도록 콘텐츠와 신호를 설계합니다.",
+  },
+  {
+    icon: "chat",
+    title: "AEO · 답변 엔진 최적화",
+    body: "검색 답변과 AI 요약에 우리 정보가 먼저 인용되도록, 질문–답변 구조로 콘텐츠를 정리합니다.",
+  },
+  {
+    icon: "chart",
+    title: "AI 노출 점수 진단",
+    body: "지금 GPT·제미나이에서 우리 키워드가 뜨는지 점수로 측정해, 어디를 손봐야 할지 알려드립니다.",
+  },
+  {
+    icon: "bolt",
+    title: "AI 마케팅 사이트 제작",
+    body: "바이브코딩으로 업종 맞춤 마케팅 사이트를 직접 제작합니다. 외주를 거치지 않아 빠르고 정확합니다.",
+  },
+  {
+    icon: "wrench",
+    title: "원하는 자동화 MVP 제작",
+    body: "반복 업무나 필요한 도구가 있다면, 실제로 작동하는 시제품(MVP)으로 먼저 만들어 드립니다.",
+  },
+];
+
+const MARQUEE = [
+  "네이버 SEO",
+  "블로그 상위노출",
+  "GEO",
+  "AEO",
+  "ChatGPT 노출",
+  "제미나이 노출",
+  "AI 노출 점수 진단",
+  "자동화 MVP 제작",
+  "키워드 마케팅",
+  "AI 사이트 제작",
+];
 
 export default function Home() {
   return (
@@ -10,72 +58,58 @@ export default function Home() {
 
       {/* ===================== 히어로 ===================== */}
       <section className="hero">
-        <div className="container hero__inner">
-          <div className="hero__copy reveal">
-            <p className="eyebrow">네이버 SEO · GEO · AEO · AI 사이트 제작</p>
-            <h1 className="hero__title">
-              검색과 AI가
-              <br />
-              <span className="hl">당신을 먼저 찾게</span>
-              <br />
-              만듭니다.
-            </h1>
-            <p className="hero__sub">
-              네이버 블로그 상위노출부터 ChatGPT·제미나이 같은{" "}
-              <strong>AI 검색 노출</strong>까지. 마케팅을{" "}
-              <strong>직접 만드는</strong> 바이브코더 마케터가 당신의 비즈니스를
-              검색 결과 맨 앞에 세웁니다.
-            </p>
-            <div className="hero__cta">
-              <a
-                className="btn btn--primary"
-                href={site.kakaoUrl}
-                target="_blank"
-                rel="noopener"
-              >
-                카카오톡으로 무료 상담
-              </a>
-              <a className="btn btn--ghost" href="#services">
-                서비스 살펴보기
-              </a>
-            </div>
-            <ul className="hero__badges">
-              <li>✓ AI 노출 점수 진단 제공</li>
-              <li>✓ 원하는 자동화 서비스 MVP 제작</li>
-              <li>✓ 마케팅부터 제작까지 한 번에</li>
-            </ul>
-          </div>
+        <div className="hero__bg" aria-hidden="true" />
 
-          {/* AI 노출 점수 카드 (점수측정 도구를 형상화한 시각 요소) */}
-          <aside className="hero__visual reveal" aria-label="AI 검색 노출 점수 예시">
-            <div className="score-card">
-              <div className="score-card__head">
-                <span className="dot" /> AI 검색 노출 점수
-              </div>
-              <div className="gauge">
-                <div className="gauge__center">
-                  <strong data-count="87">0</strong>
-                  <span>/ 100</span>
-                </div>
-              </div>
-              <ul className="score-card__list">
-                <li>
-                  <span>ChatGPT 노출</span>
-                  <b className="tag tag--good">우수</b>
-                </li>
-                <li>
-                  <span>제미나이 노출</span>
-                  <b className="tag tag--ok">양호</b>
-                </li>
-                <li>
-                  <span>네이버 검색</span>
-                  <b className="tag tag--good">1페이지</b>
-                </li>
-              </ul>
-            </div>
-            <div className="blob blob--violet" aria-hidden="true" />
-            <div className="blob blob--yellow" aria-hidden="true" />
-          </aside>
+        <span className="float-pill float-pill--1" aria-hidden="true">
+          #네이버상위노출
+        </span>
+        <span className="float-pill float-pill--2" aria-hidden="true">
+          #ChatGPT노출
+        </span>
+        <span className="float-pill float-pill--3" aria-hidden="true">
+          #제미나이
+        </span>
+        <span className="float-pill float-pill--4" aria-hidden="true">
+          #자동화MVP
+        </span>
+
+        <div className="container hero__inner">
+          <p className="hero__eyebrow fade-up">
+            네이버 SEO · GEO · AEO · 자동화 MVP
+          </p>
+          <h1 className="hero__title">
+            <span className="hero__line fade-up fade-up--1">
+              <Rotator />
+              <span className="hero__suffix">에서</span>
+            </span>
+            <span className="hero__line fade-up fade-up--2">
+              당신을 <span className="hl">먼저</span> 찾게.
+            </span>
+          </h1>
+          <p className="hero__sub fade-up fade-up--3">
+            네이버 블로그 상위노출부터 ChatGPT·제미나이 같은{" "}
+            <strong>AI 검색 노출</strong>까지. 마케팅을{" "}
+            <strong>직접 만드는</strong> 바이브코더 마케터가 당신의 비즈니스를
+            검색 결과 맨 앞에 세웁니다.
+          </p>
+          <div className="hero__cta fade-up fade-up--4">
+            <a
+              className="btn btn--primary btn--lg btn--pulse"
+              href={site.kakaoUrl}
+              target="_blank"
+              rel="noopener"
+            >
+              카카오톡으로 무료 상담
+            </a>
+            <a className="btn btn--ghost btn--lg" href="#services">
+              서비스 보기
+            </a>
+          </div>
+          <ul className="hero__trust fade-up fade-up--5">
+            <li>AI 노출 점수 진단</li>
+            <li>자동화 MVP 제작</li>
+            <li>마케팅부터 제작까지</li>
+          </ul>
         </div>
 
         {/* 키워드 마퀴 */}
@@ -83,16 +117,9 @@ export default function Home() {
           <div className="marquee__track">
             {[0, 1].map((i) => (
               <Fragment key={i}>
-                <span>네이버 SEO</span>
-                <span>블로그 상위노출</span>
-                <span>GEO</span>
-                <span>AEO</span>
-                <span>ChatGPT 노출</span>
-                <span>제미나이 노출</span>
-                <span>AI 노출 점수 진단</span>
-                <span>자동화 MVP 제작</span>
-                <span>키워드 마케팅</span>
-                <span>AI 사이트 제작</span>
+                {MARQUEE.map((w) => (
+                  <span key={`${i}-${w}`}>{w}</span>
+                ))}
               </Fragment>
             ))}
           </div>
@@ -102,7 +129,9 @@ export default function Home() {
       {/* ===================== 공감(문제 제기) ===================== */}
       <section className="section problem" id="problem">
         <div className="container">
-          <h2 className="section__title reveal">혹시 이런 고민, 있으신가요?</h2>
+          <h2 className="section__title reveal">
+            혹시 이런 고민, 있으신가요?
+          </h2>
           <p className="section__lead reveal">
             대부분의 사장님이 똑같이 막히는 지점입니다.
           </p>
@@ -127,60 +156,23 @@ export default function Home() {
       <section className="section services" id="services">
         <div className="container">
           <p className="eyebrow reveal">SERVICES</p>
-          <h2 className="section__title reveal">검색의 모든 입구를 잡아드립니다</h2>
+          <h2 className="section__title reveal">
+            검색의 모든 입구를 잡아드립니다
+          </h2>
           <p className="section__lead reveal">
             네이버부터 생성형 AI까지, 사람들이 찾는 곳마다 당신이 보이게.
           </p>
 
           <div className="cards">
-            <article className="card reveal">
-              <div className="card__icon">🔎</div>
-              <h3>네이버 블로그 SEO 상위노출</h3>
-              <p>
-                키워드 경쟁도 설계부터 콘텐츠 구조까지, 검색 1페이지에 노출되는
-                블로그 마케팅을 만듭니다.
-              </p>
-            </article>
-            <article className="card reveal">
-              <div className="card__icon">🤖</div>
-              <h3>GEO · 생성형 AI 검색 최적화</h3>
-              <p>
-                ChatGPT·제미나이가 답변할 때 <b>당신의 브랜드를 추천·인용</b>하도록
-                콘텐츠와 신호를 설계합니다.
-              </p>
-            </article>
-            <article className="card reveal">
-              <div className="card__icon">💬</div>
-              <h3>AEO · 답변 엔진 최적화</h3>
-              <p>
-                검색 답변과 AI 요약에 우리 정보가 먼저 인용되도록, 질문–답변
-                구조로 콘텐츠를 정리합니다.
-              </p>
-            </article>
-            <article className="card reveal">
-              <div className="card__icon">📊</div>
-              <h3>AI 노출 점수 진단</h3>
-              <p>
-                지금 GPT·제미나이에서 우리 키워드가 뜨는지, <b>점수로 측정</b>해
-                어디를 손봐야 할지 알려드립니다.
-              </p>
-            </article>
-            <article className="card reveal">
-              <div className="card__icon">⚡</div>
-              <h3>AI 마케팅 사이트 제작</h3>
-              <p>
-                바이브코딩으로 업종 맞춤 마케팅 사이트를 직접 제작합니다. 외주를
-                거치지 않아 빠르고 정확합니다.
-              </p>
-            </article>
-            <article className="card reveal">
-              <div className="card__icon">🛠️</div>
-              <h3>원하는 자동화 MVP 제작</h3>
-              <p>
-                반복 업무나 필요한 도구가 있다면, 실제로 작동하는 시제품(MVP)으로
-                먼저 만들어 드립니다.
-              </p>
-            </article>
+            {SERVICES.map((s) => (
+              <article className="card reveal" key={s.title}>
+                <div className="card__icon">
+                  <Icon name={s.icon} />
+                </div>
+                <h3>{s.title}</h3>
+                <p>{s.body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -195,8 +187,8 @@ export default function Home() {
             </h2>
             <p className="section__lead">
               지금 보고 계신 이 사이트도 제가 직접 만들고, 검색·AI 노출에
-              최적화했습니다. 자기 사이트도 검색에 못 띄우는 마케터에게 일을
-              맡길 순 없으니까요.
+              최적화했습니다. 자기 사이트도 검색에 못 띄우는 마케터에게 일을 맡길
+              순 없으니까요.
             </p>
             <ul className="checklist">
               <li>
@@ -250,7 +242,8 @@ export default function Home() {
           <div className="mvp__copy reveal">
             <p className="eyebrow">AUTOMATION MVP</p>
             <h2 className="section__title">
-              원하는 자동화, <span className="hl">MVP로 먼저</span> 만들어 드립니다
+              원하는 자동화, <span className="hl">MVP로 먼저</span> 만들어
+              드립니다
             </h2>
             <p className="section__lead">
               마케팅만 하는 게 아니라, <b>직접 만드는</b> 마케터입니다. 반복되는
@@ -289,7 +282,9 @@ export default function Home() {
       <section className="section process" id="process">
         <div className="container">
           <p className="eyebrow reveal">PROCESS</p>
-          <h2 className="section__title reveal">상담부터 리포트까지, 간단합니다</h2>
+          <h2 className="section__title reveal">
+            상담부터 리포트까지, 간단합니다
+          </h2>
 
           <ol className="steps">
             <li className="step reveal">
