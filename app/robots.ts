@@ -4,9 +4,9 @@ import { site } from "@/lib/site";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/" },
+      { userAgent: "*", allow: "/", disallow: ["/admin", "/api/"] },
       // 생성형 AI / 검색 크롤러 명시 허용 (GEO·AEO)
-      { userAgent: "GPTBot", allow: "/" },
+      { userAgent: "GPTBot", allow: "/", disallow: ["/admin", "/api/"] },
       { userAgent: "OAI-SearchBot", allow: "/" },
       { userAgent: "ChatGPT-User", allow: "/" },
       { userAgent: "Google-Extended", allow: "/" },

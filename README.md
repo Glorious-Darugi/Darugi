@@ -156,3 +156,30 @@ email: "받을이메일@example.com",                  // 또는 메일앱으로
 
 ## 📄 추가된 페이지
 - `/` 홈 · `/contact` 상담 신청 · `/blog` 블로그 목록 · `/blog/[slug]` 글
+
+---
+
+## 8. 상담 신청 관리자 페이지 (`/admin`)
+
+상담 폼으로 들어온 신청을 `/admin`(비밀번호 보호)에서 확인합니다. 신청 내용을
+저장해야 하므로 **무료 DB(Upstash Redis / Vercel KV)** 연결이 필요합니다.
+
+### 설정 (한 번만)
+1. **비밀번호 정하기** — 환경변수 `ADMIN_PASSWORD` 설정
+   - Vercel → 프로젝트 → Settings → Environment Variables → `ADMIN_PASSWORD` 추가
+2. **저장소 연결** — 둘 중 하나
+   - **Vercel KV(권장)**: Vercel → Storage → Create → KV 선택 → 프로젝트에 연결
+     (`KV_REST_API_URL`/`KV_REST_API_TOKEN`이 자동 주입됨)
+   - **Upstash 직접**: [upstash.com](https://upstash.com) 무료 가입 → Redis DB 생성 →
+     `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` 을 환경변수에 추가
+3. 다시 배포(Redeploy) → 끝
+
+### 사용
+- `www.darugi.com/admin` 접속 → 비밀번호 입력 → 신청 목록 확인
+- 비밀번호/저장소가 설정 안 되면, 방문자 폼은 자동으로 "카카오톡으로 문의" 안내로 폴백됩니다.
+
+### 로컬 테스트
+프로젝트 루트에 `.env.local` 파일을 만들고 (`.env.example` 참고) 값을 채운 뒤 `npm run dev`.
+
+> 보안: `/admin`·`/api`는 검색엔진 색인에서 제외(robots)됩니다. 비밀번호는 쿠키에
+> 평문 저장되지 않고 HMAC 토큰만 저장됩니다.
