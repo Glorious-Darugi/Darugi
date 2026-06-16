@@ -33,49 +33,21 @@ export default function ContactForm() {
     ) =>
       setForm((prev) => ({ ...prev, [key]: e.target.value }));
 
-  const composeText = () =>
-    [
-      `이름: ${form.name}`,
-      `연락처: ${form.contact}`,
-      `업종/비즈니스: ${form.business}`,
-      `관심 서비스: ${form.service}`,
-      form.keyword ? `관심 키워드: ${form.keyword}` : null,
-      "",
-      form.message,
-    ]
-      .filter((l) => l !== null)
-      .join("\n");
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
-
-    // 1) Formspree 등 엔드포인트가 설정된 경우
-    if (site.formEndpoint) {
-      try {
-        const res = await fetch(site.formEndpoint, {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body: JSON.stringify({ ...form, _subject: `[상담신청] ${form.name}` }),
-        });
-        setStatus(res.ok ? "success" : "error");
-      } catch {
-        setStatus("error");
-      }
-      return;
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) setStatus("success");
+      else if (res.status === 503) setStatus("needsConfig"); // 저장소 미설정
+      else setStatus("error");
+    } catch {
+      setStatus("error");
     }
-
-    // 2) 이메일만 설정된 경우 → 메일 앱으로
-    if (site.email) {
-      const subject = encodeURIComponent(`[상담신청] ${form.name || "문의"}`);
-      const body = encodeURIComponent(composeText());
-      window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
-      setStatus("success");
-      return;
-    }
-
-    // 3) 아무것도 설정 안 된 경우 → 카톡으로 안내
-    setStatus("needsConfig");
   };
 
   if (status === "success") {
@@ -103,8 +75,7 @@ export default function ContactForm() {
         <h3>지금은 카카오톡으로 받고 있어요</h3>
         <p>
           아래 버튼으로 편하게 말 걸어 주세요. (운영자: 폼 자동 접수를 켜려면
-          <code> lib/site.ts</code>의 <code>formEndpoint</code> 또는{" "}
-          <code>email</code>을 채우세요.)
+          저장소(Upstash Redis / Vercel KV)를 연결하세요. README 8번 참고.)
         </p>
         <a
           className="btn btn--primary"

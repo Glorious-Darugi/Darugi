@@ -19,6 +19,7 @@
   "author": "다루기",
   "license": "ISC",
   "dependencies": {
+    "@upstash/redis": "^1.38.0",
     "next": "^16.2.9",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
