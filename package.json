@@ -1,0 +1,32 @@
+{
+  "name": "darugi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "검색(네이버)과 생성형 AI(ChatGPT·제미나이)에서 먼저 보이게 만드는 마케터 홍보 사이트. 방문자를 카카오톡 상담으로 연결하고, 사이트 자체가 SEO/GEO/AEO 최적화 데모 역할을 합니다.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "네이버 SEO",
+    "GEO",
+    "AEO",
+    "AI 마케팅",
+    "자동화 MVP"
+  ],
+  "author": "다루기",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^16.2.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.3"
+  }
+}
