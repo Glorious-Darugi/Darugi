@@ -28,7 +28,7 @@
     <rect x="90" y="520" width="190" height="56" rx="28" fill="#ffffff" stroke="#ececf4"/>
     <text x="185" y="556" text-anchor="middle" fill="#5a4ff0">네이버 상위노출</text>
     <rect x="300" y="520" width="240" height="56" rx="28" fill="#ffffff" stroke="#ececf4"/>
-    <text x="420" y="556" text-anchor="middle" fill="#5a4ff0">ChatGPT·제미나이 노출</text>
+    <text x="420" y="556" text-anchor="middle" fill="#5a4ff0">ChatGPT·Gemini 노출</text>
     <rect x="560" y="520" width="170" height="56" rx="28" fill="#fff787"/>
     <text x="645" y="556" text-anchor="middle" fill="#15141c">자동화 MVP</text>
   </g>

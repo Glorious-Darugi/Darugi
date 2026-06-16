@@ -14,7 +14,7 @@ const SERVICES = [
   {
     icon: "ai",
     title: "GEO · 생성형 AI 검색 최적화",
-    body: "ChatGPT·제미나이가 답변할 때 당신의 브랜드를 추천·인용하도록 콘텐츠와 신호를 설계합니다.",
+    body: "ChatGPT·Gemini가 답변할 때 당신의 브랜드를 추천·인용하도록 콘텐츠와 신호를 설계합니다.",
   },
   {
     icon: "chat",
@@ -24,7 +24,7 @@ const SERVICES = [
   {
     icon: "chart",
     title: "AI 노출 점수 진단",
-    body: "지금 GPT·제미나이에서 우리 키워드가 뜨는지 점수로 측정해, 어디를 손봐야 할지 알려드립니다.",
+    body: "지금 GPT·Gemini에서 우리 키워드가 뜨는지 점수로 측정해, 어디를 손봐야 할지 알려드립니다.",
   },
   {
     icon: "bolt",
@@ -44,7 +44,7 @@ const MARQUEE = [
   "GEO",
   "AEO",
   "ChatGPT 노출",
-  "제미나이 노출",
+  "Gemini 노출",
   "AI 노출 점수 진단",
   "자동화 MVP 제작",
   "키워드 마케팅",
@@ -67,7 +67,7 @@ export default function Home() {
           #ChatGPT노출
         </span>
         <span className="float-pill float-pill--3" aria-hidden="true">
-          #제미나이
+          #Gemini
         </span>
         <span className="float-pill float-pill--4" aria-hidden="true">
           #자동화MVP
@@ -87,7 +87,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="hero__sub fade-up fade-up--3">
-            네이버 블로그 상위노출부터 ChatGPT·제미나이 같은{" "}
+            네이버 블로그 상위노출부터 ChatGPT·Gemini 같은{" "}
             <strong>AI 검색 노출</strong>까지. 마케팅을{" "}
             <strong>직접 만드는</strong> 바이브코더 마케터가 당신의 비즈니스를
             검색 결과 맨 앞에 세웁니다.
@@ -140,7 +140,7 @@ export default function Home() {
               블로그를 열심히 써도 <b>검색 상위에 안 뜬다</b>
             </li>
             <li className="problem__item reveal">
-              ChatGPT·제미나이에 물어보면 <b>우리 브랜드가 안 나온다</b>
+              ChatGPT·Gemini에 물어보면 <b>우리 브랜드가 안 나온다</b>
             </li>
             <li className="problem__item reveal">
               광고비는 나가는데 <b>문의로 이어지지 않는다</b>
@@ -195,7 +195,7 @@ export default function Home() {
                 <b>직접 만든다</b> — 기획·콘텐츠·사이트를 외주 없이 빠르게 실행
               </li>
               <li>
-                <b>AI 검색까지 본다</b> — 네이버를 넘어 GPT·제미나이 노출을 점수로
+                <b>AI 검색까지 본다</b> — 네이버를 넘어 GPT·Gemini 노출을 점수로
                 관리
               </li>
               <li>
@@ -213,7 +213,7 @@ export default function Home() {
               <span>
                 개 채널 동시 공략
                 <br />
-                (네이버·GPT·제미나이)
+                (네이버·GPT·Gemini)
               </span>
             </div>
             <div className="stat">
@@ -321,7 +321,7 @@ export default function Home() {
             <details>
               <summary>GEO와 AEO가 정확히 무엇인가요?</summary>
               <p>
-                GEO는 ChatGPT·제미나이 같은 생성형 AI가 답변할 때 우리 브랜드를
+                GEO는 ChatGPT·Gemini 같은 생성형 AI가 답변할 때 우리 브랜드를
                 추천·인용하게 만드는 최적화이고, AEO는 검색 답변·AI 요약에 우리
                 정보가 먼저 노출되도록 콘텐츠를 질문–답변 구조로 정리하는
                 작업입니다.
@@ -353,7 +353,7 @@ export default function Home() {
             <details>
               <summary>AI 검색 노출 점수 진단은 어떻게 받나요?</summary>
               <p>
-                타깃 키워드를 ChatGPT·제미나이 등에서 실제로 검색해 현재 노출
+                타깃 키워드를 ChatGPT·Gemini 등에서 실제로 검색해 현재 노출
                 여부와 점수를 측정해 드립니다. 카카오톡으로 무료 상담을 신청하시면
                 진단 절차를 안내합니다.
               </p>

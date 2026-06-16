@@ -2,7 +2,7 @@
   "name": "darugi",
   "version": "1.0.0",
   "private": true,
-  "description": "검색(네이버)과 생성형 AI(ChatGPT·제미나이)에서 먼저 보이게 만드는 마케터 홍보 사이트. 방문자를 카카오톡 상담으로 연결하고, 사이트 자체가 SEO/GEO/AEO 최적화 데모 역할을 합니다.",
+  "description": "검색(네이버)과 생성형 AI(ChatGPT·Gemini)에서 먼저 보이게 만드는 마케터 홍보 사이트. 방문자를 카카오톡 상담으로 연결하고, 사이트 자체가 SEO/GEO/AEO 최적화 데모 역할을 합니다.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
