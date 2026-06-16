@@ -30,13 +30,42 @@ export const site = {
     "AI 마케팅 사이트 제작",
     "자동화 MVP 제작",
   ],
+
+  /**
+   * ✏️ 상담 신청 폼 설정
+   * - formEndpoint: Formspree 등 폼 전송 주소(https://formspree.io/f/xxxx).
+   *   비워두면 폼이 자동으로 "메일 보내기(mailto)" 방식으로 동작합니다.
+   * - email: mailto 폴백에 쓰일 수신 이메일 (공개되니 주의)
+   */
+  formEndpoint: "",
+  email: "",
+
+  /**
+   * ✏️ 방문자 분석 (값을 넣으면 자동 활성화, 비우면 꺼짐)
+   * - ga4: Google Analytics 4 측정 ID (예: "G-XXXXXXXXXX")
+   * - naver: 네이버 애널리틱스 ID
+   */
+  analytics: {
+    ga4: "",
+    naver: "",
+  },
+
+  /**
+   * ✏️ 검색엔진 사이트 인증 코드 (등록 시 받는 코드)
+   * - google: 구글 서치콘솔
+   * - naver: 네이버 서치어드바이저
+   */
+  verification: {
+    google: "",
+    naver: "",
+  },
 } as const;
 
-/** 내비게이션 메뉴 */
+/** 내비게이션 메뉴 (다른 페이지에서도 동작하도록 / 로 시작) */
 export const navItems = [
-  { href: "#services", label: "서비스" },
-  { href: "#why", label: "차별점" },
-  { href: "#mvp", label: "자동화 MVP" },
-  { href: "#process", label: "진행 방식" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#services", label: "서비스" },
+  { href: "/diagnosis", label: "AI 진단" },
+  { href: "/#mvp", label: "자동화 MVP" },
+  { href: "/blog", label: "블로그" },
+  { href: "/#faq", label: "FAQ" },
 ] as const;

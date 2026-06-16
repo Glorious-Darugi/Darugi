@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FloatingCta from "@/components/FloatingCta";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,6 +29,12 @@ export const metadata: Metadata = {
     description: "네이버 SEO부터 ChatGPT·제미나이 AI 검색 노출(GEO·AEO)까지.",
     images: ["/og-image.svg"],
   },
+  verification: {
+    google: site.verification.google || undefined,
+    other: site.verification.naver
+      ? { "naver-site-verification": site.verification.naver }
+      : {},
+  },
 };
 
 export const viewport: Viewport = {
@@ -47,6 +54,7 @@ export default function RootLayout({
         {children}
         <SiteFooter />
         <FloatingCta />
+        <Analytics />
       </body>
     </html>
   );

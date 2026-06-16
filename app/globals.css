@@ -1,7 +1,10 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
 /* ============================================================
    다루기 — 랜딩 사이트 스타일
    팔레트: 화이트 + 노랑(#fff787) + 바이올렛(#787fff)
    ✏️ 색상 바꾸려면 아래 :root 변수만 수정하면 전체에 반영됩니다.
+   폰트: Pretendard (위 @import) → 한글 타이포 일관성 확보
 ============================================================ */
 
 :root {

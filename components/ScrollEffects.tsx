@@ -88,6 +88,23 @@ export default function ScrollEffects() {
       const target = parseInt(num.getAttribute("data-count") ?? "0", 10);
       watch(num, () => animateCount(num, target, null));
     });
+
+    /* 3) 카카오톡 클릭 → 전환 이벤트 (GA4 있을 때만) */
+    const onKakaoClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      const link = target?.closest<HTMLAnchorElement>('a[href*="kakao.com"]');
+      if (!link) return;
+      const gtag = (window as unknown as { gtag?: (...a: unknown[]) => void })
+        .gtag;
+      if (typeof gtag === "function") {
+        gtag("event", "kakao_click", {
+          link_location: link.getAttribute("aria-label") || link.textContent?.trim(),
+        });
+      }
+    };
+    document.addEventListener("click", onKakaoClick);
+
+    return () => document.removeEventListener("click", onKakaoClick);
   }, []);
 
   return null;
