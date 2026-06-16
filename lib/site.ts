@@ -64,8 +64,8 @@ export const site = {
 /** 내비게이션 메뉴 (다른 페이지에서도 동작하도록 / 로 시작) */
 export const navItems = [
   { href: "/#services", label: "서비스" },
-  { href: "/diagnosis", label: "AI 진단" },
+  { href: "/#why", label: "차별점" },
   { href: "/#mvp", label: "자동화 MVP" },
-  { href: "/blog", label: "블로그" },
+  { href: "/#process", label: "진행 방식" },
   { href: "/#faq", label: "FAQ" },
 ] as const;
