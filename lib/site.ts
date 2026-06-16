@@ -14,8 +14,8 @@ export const site = {
   /** 메타 설명(검색 결과 요약 문구) */
   description:
     "네이버 블로그 상위노출부터 ChatGPT·제미나이 같은 AI 검색 노출(GEO·AEO)까지. 마케팅을 직접 만드는 바이브코더 마케터가 당신의 비즈니스를 검색 결과 맨 앞에 세웁니다. 원하는 자동화는 MVP로 제작.",
-  /** ✏️ 배포 도메인 (배포 후 실제 주소로 변경) */
-  url: "https://REPLACE-WITH-YOUR-DOMAIN.com",
+  /** ✏️ 배포 도메인 (대표 주소) */
+  url: "https://www.darugi.com",
   /** ✏️ 카카오톡 채널/오픈채팅 링크 */
   kakaoUrl: "http://pf.kakao.com/_YeuxbX",
   /** 검색 키워드 */
