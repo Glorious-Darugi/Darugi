@@ -186,9 +186,9 @@ export default function Home() {
               말이 아니라, <span className="hl">결과물로</span> 증명합니다
             </h2>
             <p className="section__lead">
-              지금 보고 계신 이 사이트도 제가 직접 만들고, 검색·AI 노출에
-              최적화했습니다. 자기 사이트도 검색에 못 띄우는 마케터에게 일을 맡길
-              순 없으니까요.
+              지금 보고 계신 이 사이트도 제가 직접 만들고, 검색·AI 노출까지
+              직접 챙겼습니다. 말로 길게 설명하기보다, 결과물로 먼저
+              보여드리는 편이 좋더라고요.
             </p>
             <ul className="checklist">
               <li>
@@ -246,8 +246,11 @@ export default function Home() {
               드립니다
             </h2>
             <p className="section__lead">
-              마케팅만 하는 게 아니라, <b>직접 만드는</b> 마케터입니다. 반복되는
-              업무나 “이런 게 있으면 좋겠다” 싶은 도구가 있다면 말씀만 주세요.
+              마케팅만 하는 게 아니라, <b>직접 만드는</b> 마케터입니다.
+              <br />
+              반복되는 업무나 “이런 게 있으면 좋겠다” 싶은 도구가 있다면 말씀만
+              주세요.
+              <br />
               실제로 작동하는 시제품(MVP)으로 먼저 보여드립니다.
             </p>
             <ul className="checklist">
